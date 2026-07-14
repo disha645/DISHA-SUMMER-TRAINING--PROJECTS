@@ -37,7 +37,7 @@ V4 = st.number_input(
     value=0.0
 )
 if st.button("Predict"):
-    data = pd.DataFrame(
+    input_data = pd.DataFrame(
         [[
             V1,
             V2,
@@ -51,8 +51,12 @@ if st.button("Predict"):
             "V4"
         ]
     )
-    input_data = pd.DataFrame(data, columns=["V1", "V2", "V3", "V4"])
-    
+    input_data = {
+        'V1': [V1],
+        'V2': [V2],
+        'V3': [V3],
+        'V4': [V4]
+    }
     prediction = model.predict(input_data)
     if prediction[0] == 0:
         st.success("The transaction is not fraudulent.")
