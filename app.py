@@ -57,6 +57,8 @@ if st.button("Predict"):
         'V3': [V3],
         'V4': [V4]
     }
+    input_data = pd.array.reshape(1, -1)
+    input_data = pd.DataFrame(input_data)
     prediction = model.predict(input_data)
     if prediction[0] == 0:
         st.success("The transaction is not fraudulent.")
