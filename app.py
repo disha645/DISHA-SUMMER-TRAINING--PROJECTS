@@ -2,8 +2,8 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("model.pkl")
-joblib.dump(model, "model.pkl")  # Save the model to a fil
+model = joblib.load("fraudmodel.pkl")
+joblib.dump(model, "fraudmodel.pkl")  # Save the model to a fil
 
 st.set_page_config(
     page_title="credit card fraud detection",
