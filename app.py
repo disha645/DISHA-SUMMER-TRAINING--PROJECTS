@@ -51,9 +51,9 @@ if st.button("Predict"):
             "V4"
         ]
     )
-    features = pd.DataFrame([{"V1", "V2", "V3", "V4"}])
-    data = data[features]
-    prediction = model.predict(data)
+    nput_data = pd.DataFrame(data, columns=["V1", "V2", "V3", "V4"])
+    
+    prediction = model.predict(input_data)
     if prediction[0] == 0:
         st.success("The transaction is not fraudulent.")
     else:
